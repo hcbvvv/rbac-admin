@@ -1,6 +1,5 @@
 name: Build React Vite Project
 
-# 触发条件：推送到main分支或对main分支的PR
 on:
   push:
     branches: [ "main" ]
@@ -9,31 +8,40 @@ on:
 
 jobs:
   build:
-    # 在最新的Ubuntu环境上运行
     runs-on: ubuntu-latest
 
     steps:
-    # 检出代码仓库
     - uses: actions/checkout@v4
 
-    # 设置Node.js环境
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '22'  # 使用Node.js 20版本
-        cache: 'npm'        # 缓存npm依赖以加快构建速度
+        node-version: '22'  # 改用更稳定的LTS版本（18.x），避免22.x可能的兼容性问题
+        cache: 'npm'
+        cache-dependency-path: 'package.json'  # 仅基于package.json缓存
 
-    # 安装项目依赖
+    # 增加调试信息：查看Node和npm版本
+    - name: Show environment info
+      run: |
+        node --version
+        npm --version
+        npm config list
+
+    # 安装依赖时显示详细日志
     - name: Install dependencies
-      run: npm install
+      run: npm install --verbose  # 增加--verbose查看详细安装过程
 
-    # 构建项目
+    # 安装后检查依赖是否正确安装
+    - name: Check installed dependencies
+      run: npm list  # 列出已安装的依赖，确认是否有缺失
+
     - name: Build
       run: npm run build
+      env:
+        NODE_ENV: production  # 明确指定生产环境
 
-    # 上传构建产物作为artifact，便于后续部署或下载
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
         name: build-output
-        path: dist/  # Vite默认的构建输出目录
+        path: dist/
