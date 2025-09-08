@@ -20,7 +20,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'  # 使用Node.js 20版本
+        node-version: '22'  # 使用Node.js 20版本
         cache: 'npm'        # 缓存npm依赖以加快构建速度
 
     # 安装项目依赖
