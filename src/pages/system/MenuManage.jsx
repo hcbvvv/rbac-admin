@@ -668,10 +668,11 @@ const MenuManage = () => {
                 )}
               </Space>
               <Space>
+                {menu.showInCollapsed && <Tag color="blue" size="small">折叠显示</Tag>}
                 <Tag color={menu.status === 'active' ? 'green' : 'red'} size="small">
                   {menu.status === 'active' ? '启用' : '禁用'}
                 </Tag>
-                {menu.showInCollapsed && <Tag color="blue" size="small">折叠显示</Tag>}
+                
               </Space>
             </div>
           ),
@@ -725,7 +726,7 @@ const MenuManage = () => {
   const renderMenuDetail = () => {
     if (!selectedMenuInfo) {
       return (
-        <Card>
+        <Card style={{ height: 'calc(100vh-96px)' }}>
           <div style={{ textAlign: 'center', padding: '50px 0', color: '#999' }}>
             <MenuOutlined style={{ fontSize: '48px', marginBottom: '16px' }} />
             <p>请在左侧选择一个菜单项查看详情</p>
@@ -1423,12 +1424,12 @@ const MenuManage = () => {
               </Space>
             }
             size="small"
-            style={{ height: 'calc(100vh - 200px)', overflow: 'hidden' }}
-            bodyStyle={{ 
+            style={{ height: 'calc(100vh - 176px)', overflow: 'hidden' }}
+            styles={{body:{ 
               padding: '12px',
-              height: 'calc(100vh - 260px)',
+              height: 'calc(100vh - 180px)',
               overflow: 'auto'
-            }}
+            }}}
             extra={
               <Tooltip title="展开/折叠所有">
                 <Button 
@@ -1459,7 +1460,7 @@ const MenuManage = () => {
         
         {/* 右侧菜单详情 */}
         <Col xs={24} sm={24} md={16} lg={18} xl={18}>
-          <div style={{ height: 'calc(100vh - 200px)', overflow: 'auto' }}>
+          <div style={{ height: 'calc(100vh - 176px)', overflow: 'auto' }}>
             {renderMenuDetail()}
           </div>
         </Col>
@@ -1616,19 +1617,11 @@ const MenuManage = () => {
           permissionForm.resetFields()
         }}
         footer={null}
-        width={1000}
-        destroyOnClose
-        style={{ top: 20 }}
+        width={1300}
+        destroyOnHidden
+        style={{ top: '100px' }}
       >
-        <Alert
-          message="权限配置说明"
-          description="统一配置所有类型的权限，包括资源权限、按钮权限和接口权限。可分别为接口权限和数据权限设置不同的范围。"
-          type="info"
-          showIcon
-          style={{ marginBottom: 24 }}
-        />
-        
-        <div style={{ padding: '0 24px 24px' }}>
+        <div style={{ padding: '0 30px 30px' }}>
           <Alert
             message="权限配置说明"
             description="通过表格管理当前菜单的所有权限配置。可以手动添加、编辑、删除权限，并为接口权限和数据权限设置不同的范围。"
@@ -1690,6 +1683,7 @@ const MenuManage = () => {
                   dataIndex: 'title',
                   key: 'title',
                   ellipsis: true,
+                  width: 250,
                   render: (title, record) => (
                     <div>
                       <div style={{ fontWeight: 'bold', marginBottom: '2px' }}>
@@ -1712,7 +1706,7 @@ const MenuManage = () => {
                   title: '权限范围',
                   dataIndex: 'dataScope',
                   key: 'dataScope',
-                  width: 120,
+                  width: 150,
                   render: (dataScope, record) => {
                     const scopeText = getDataScopeText(dataScope, record.customDeptIds)
                     
@@ -1734,7 +1728,7 @@ const MenuManage = () => {
                 {
                   title: '操作',
                   key: 'action',
-                  width: 160,
+                  width: 200,
                   render: (_, record) => (
                     <Space>
                       <Button

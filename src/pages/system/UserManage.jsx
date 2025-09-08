@@ -138,6 +138,72 @@ const UserManage = () => {
       status: 'active',
       roles: ['user'],
       createdAt: '2024-01-07 16:10:00',
+    },{
+      id: '7',
+      username: 'user006',
+      name: '周八',
+      email: 'zhou@example.com',
+      phone: '18222222222',
+      deptId: '2',
+      deptName: '技术部',
+      status: 'active',
+      roles: ['user'],
+      createdAt: '2024-01-07 16:10:00',
+    },{
+      id: '7',
+      username: 'user006',
+      name: '周八',
+      email: 'zhou@example.com',
+      phone: '18222222222',
+      deptId: '2',
+      deptName: '技术部',
+      status: 'active',
+      roles: ['user'],
+      createdAt: '2024-01-07 16:10:00',
+    },{
+      id: '7',
+      username: 'user006',
+      name: '周八',
+      email: 'zhou@example.com',
+      phone: '18222222222',
+      deptId: '2',
+      deptName: '技术部',
+      status: 'active',
+      roles: ['user'],
+      createdAt: '2024-01-07 16:10:00',
+    },{
+      id: '7',
+      username: 'user006',
+      name: '周八',
+      email: 'zhou@example.com',
+      phone: '18222222222',
+      deptId: '2',
+      deptName: '技术部',
+      status: 'active',
+      roles: ['user'],
+      createdAt: '2024-01-07 16:10:00',
+    },{
+      id: '7',
+      username: 'user006',
+      name: '周八',
+      email: 'zhou@example.com',
+      phone: '18222222222',
+      deptId: '2',
+      deptName: '技术部',
+      status: 'active',
+      roles: ['user'],
+      createdAt: '2024-01-07 16:10:00',
+    },{
+      id: '7',
+      username: 'user006',
+      name: '周八',
+      email: 'zhou@example.com',
+      phone: '18222222222',
+      deptId: '2',
+      deptName: '技术部',
+      status: 'active',
+      roles: ['user'],
+      createdAt: '2024-01-07 16:10:00',
     },
   ])
   
@@ -388,12 +454,12 @@ const UserManage = () => {
               </Space>
             }
             size="small"
-            style={{ height: 'calc(100vh - 200px)', overflow: 'hidden' }}
-            bodyStyle={{ 
+            style={{ height: 'calc(100vh - 96px)', overflow: 'hidden' }}
+            styles={{ body: { 
               padding: '12px',
-              height: 'calc(100vh - 260px)',
+              height: 'calc(100vh - 100px)',
               overflow: 'auto'
-            }}
+            }}}
           >
             <div style={{ marginBottom: 8 }}>
               <Button 
@@ -466,6 +532,12 @@ const UserManage = () => {
               </Space>
             }
             size="small"
+            style={{ height: 'calc(100vh - 96px)', overflow: 'hidden' }}
+            styles={{ body: { 
+              padding: '12px',
+              height: 'calc(100vh - 100px)',
+              overflow: 'auto'
+            }}}
           >
             {/* 部门信息显示 */}
             {selectedDeptInfo && (
@@ -508,7 +580,7 @@ const UserManage = () => {
               }}
               pagination={{
                 total: filteredUsers.length,
-                pageSize: 10,
+                pageSize: 20,
                 showSizeChanger: true,
                 showQuickJumper: true,
                 showTotal: (total, range) => 

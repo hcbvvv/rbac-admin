@@ -19,6 +19,7 @@ body {
 
 .ant-layout {
   height: 100vh;
+  border-radius: 5%;
 }
 
 .logo {

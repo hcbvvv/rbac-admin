@@ -569,7 +569,7 @@ const RoleManage = () => {
   
   return (
     <div>
-      <Card>
+      <Card styles={{body:{height:'calc(100vh - 96px)'}}}>
         {/* 顶部操作栏 - 包含基础查询和新增按钮 */}
         <div style={{ 
           display: 'flex', 

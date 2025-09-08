@@ -199,7 +199,7 @@ const DeptManage = () => {
                 )}
               </Space>
             }
-            style={{ height: 'calc(100vh - 200px)', overflow: 'auto' }}
+            style={{ height: 'calc(100vh - 96px)', overflow: 'auto' }}
           >
             {treeData.length > 0 ? (
               <Tree
@@ -259,7 +259,7 @@ const DeptManage = () => {
                 </Space>
               )
             }
-            style={{ minHeight: 'calc(100vh - 200px)' }}
+            style={{ minHeight: 'calc(100vh - 96px)' }}
           >
             {selectedDept ? (
               <Descriptions column={2} bordered>
