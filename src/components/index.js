@@ -1,0 +1,8 @@
+// 导出所有组件
+export { default as AuthGuard } from './AuthGuard'
+export { default as MenuIcon } from './MenuIcon'
+export { default as Sidebar } from './Sidebar'
+export { default as AppBreadcrumb } from './AppBreadcrumb'
+export { default as AppHeader } from './AppHeader'
+export { default as DeptSelector } from './DeptSelector'
+export { default as DataPermissionModal } from './DataPermissionModal'
