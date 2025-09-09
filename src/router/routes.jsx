@@ -6,7 +6,7 @@ import AuthLayout from '@/layouts/AuthLayout'
 // 懒加载页面组件 - 使用新的模块化结构
 const Dashboard = lazy(() => import('@/pages/dashboard'))
 const Login = lazy(() => import('@/pages/login'))
-const Profile = lazy(() => import('@/pages/Profile'))
+const Profile = lazy(() => import('@/pages/profile'))
 
 // 系统管理页面 - 使用新的模块化结构
 const UserManage = lazy(() => import('@/pages/system/user-manage'))
@@ -17,9 +17,9 @@ const DictManage = lazy(() => import('@/pages/system/dict-manage'))
 const ErrorDemo = lazy(() => import('@/pages/system/error-demo'))
 
 // 错误页面
-const NotFound = lazy(() => import('@/pages/errors/NotFound'))
-const Forbidden = lazy(() => import('@/pages/errors/Forbidden'))
-const ServerError = lazy(() => import('@/pages/errors/ServerError'))
+const NotFound = lazy(() => import('@/pages/errors/not-found'))
+const Forbidden = lazy(() => import('@/pages/errors/forbidden'))
+const ServerError = lazy(() => import('@/pages/errors/server-error'))
 
 /**
  * 路由配置
