@@ -1,0 +1,54 @@
+/* NotFound 页面样式 */
+
+.notFoundContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+.notFoundCard {
+  max-width: 600px;
+  width: 100%;
+  height: calc(100vh - 40px);
+  overflow: hidden;
+}
+
+.notFoundCardBody {
+  padding: 24px;
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+
+.notFoundResult {
+  
+}
+
+.notFoundExtra {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.notFoundButton {
+  
+}
+
+.notFoundInfo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.notFoundPath {
+  font-size: 14px;
+  color: #666;
+}
+
+.notFoundContact {
+  font-size: 12px;
+  color: #999;
+}

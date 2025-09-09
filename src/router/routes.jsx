@@ -3,19 +3,18 @@ import { ROUTES, PERMISSION_CODES } from '@/constants'
 import MainLayout from '@/layouts/MainLayout'
 import AuthLayout from '@/layouts/AuthLayout'
 
-// 懒加载页面组件
-const Dashboard = lazy(() => import('@/pages/Dashboard'))
-const Login = lazy(() => import('@/pages/Login'))
+// 懒加载页面组件 - 使用新的模块化结构
+const Dashboard = lazy(() => import('@/pages/dashboard'))
+const Login = lazy(() => import('@/pages/login'))
 const Profile = lazy(() => import('@/pages/Profile'))
 
-// 系统管理页面
-const UserManage = lazy(() => import('@/pages/system/UserManage'))
-const RoleManage = lazy(() => import('@/pages/system/RoleManage'))
-const DeptManage = lazy(() => import('@/pages/system/DeptManage'))
-const MenuManage = lazy(() => import('@/pages/system/MenuManage'))
-const DictManage = lazy(() => import('@/pages/system/DictManage'))
-const ErrorDemo = lazy(() => import('@/pages/system/ErrorDemo'))
-const ErrorDemoTest = lazy(() => import('@/pages/system/ErrorDemoTest'))
+// 系统管理页面 - 使用新的模块化结构
+const UserManage = lazy(() => import('@/pages/system/user-manage'))
+const RoleManage = lazy(() => import('@/pages/system/role-manage'))
+const DeptManage = lazy(() => import('@/pages/system/dept-manage'))
+const MenuManage = lazy(() => import('@/pages/system/menu-manage'))
+const DictManage = lazy(() => import('@/pages/system/dict-manage'))
+const ErrorDemo = lazy(() => import('@/pages/system/error-demo'))
 
 // 错误页面
 const NotFound = lazy(() => import('@/pages/errors/NotFound'))
@@ -146,15 +145,6 @@ export const routes = [
             element: <ErrorDemo />,
             meta: {
               title: '错误页面样例',
-              icon: 'ExclamationCircleOutlined',
-              keepAlive: false,
-            },
-          },
-          {
-            path: '/system/error-demo-test',
-            element: <ErrorDemoTest />,
-            meta: {
-              title: '错误页面测试',
               icon: 'ExclamationCircleOutlined',
               keepAlive: false,
             },

@@ -1,0 +1,38 @@
+/* Forbidden 页面样式 */
+
+.forbiddenContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+.forbiddenCard {
+  max-width: 600px;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+.forbiddenCardBody {
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+
+.forbiddenResult {
+  
+}
+
+.forbiddenExtra {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.forbiddenButton {
+  
+}

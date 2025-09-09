@@ -1,0 +1,197 @@
+/* RoleManage 页面样式 */
+
+.roleManageContainer {
+  background-color: #f5f5f5;
+}
+
+.roleManageCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+.roleManageCardBody {
+  padding: 24px;
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+/* 顶部操作栏样式 */
+.topOperationBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.leftSearchSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.rightActionSection {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.basicSearchInput {
+  width: 200px;
+}
+
+.basicSearchSelect {
+  width: 120px;
+}
+
+.advancedSearchButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.advancedSearchActive {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.clearFilterButton {
+  color: #ff4d4f;
+}
+
+/* 查询结果统计样式 */
+.searchResultAlert {
+  margin-bottom: 16px;
+}
+
+/* 表格样式 */
+.roleTable {
+  padding-bottom: 20px;
+}
+
+/* 权限配置模态框样式 */
+.permissionModal {
+  
+}
+
+.permissionAlert {
+  margin-bottom: 16px;
+}
+
+.permissionTreeContainer {
+  max-height: 450px;
+  overflow: auto;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+/* 人员分配模态框样式 */
+.userAssignModal {
+  
+}
+
+.userAssignAlert {
+  margin-bottom: 16px;
+}
+
+.transferHeader {
+  margin-bottom: 16px;
+}
+
+.transferHeaderItem {
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.transferAvailableHeader {
+  background: #f6f8fa;
+}
+
+.transferAssignedHeader {
+  background: #e6f7ff;
+}
+
+.transferUserItem {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.transferUserInfo {
+  flex: 1;
+}
+
+.transferUserName {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.transferUserDesc {
+  font-size: 12px;
+  color: #666;
+}
+
+.transferStats {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f6f8fa;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.transferStatItem {
+  
+}
+
+.transferStatNumber {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.transferStatLabel {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 高级查询模态框样式 */
+.advancedSearchModal {
+  
+}
+
+.advancedSearchAlert {
+  margin-bottom: 16px;
+}
+
+.advancedSearchForm {
+  
+}
+
+.advancedSearchNote {
+  font-size: 12px;
+}
+
+/* 角色表单模态框样式 */
+.roleFormModal {
+  
+}
+
+.roleForm {
+  padding: 16px 0;
+}
+
+.roleFormSubmitSection {
+  text-align: right;
+  margin-bottom: 0;
+}

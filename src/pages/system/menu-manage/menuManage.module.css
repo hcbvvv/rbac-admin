@@ -1,0 +1,274 @@
+/* MenuManage 页面样式 */
+
+.menuManageContainer {
+  background-color: #f5f5f5;
+}
+
+.menuManageRow {
+  height: calc(100vh - 144px);
+}
+
+/* 左侧菜单树样式 */
+.leftPanel {
+  height: 100%;
+}
+
+.menuTreeCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+.menuTreeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuTreeTitle {
+  font-weight: 500;
+}
+
+.menuTreeExtra {
+  display: flex;
+  gap: 8px;
+}
+
+.menuTreeBody {
+  padding: 12px;
+  height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.menuTreeNode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.menuNodeIcon {
+  flex-shrink: 0;
+}
+
+.menuNodeContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.menuNodeTitle {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menuNodePath {
+  font-size: 11px;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menuNodeBadges {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.menuNodeStatus {
+  
+}
+
+.menuNodePermCount {
+  
+}
+
+/* 右侧详情区域样式 */
+.rightPanel {
+  height: 100%;
+}
+
+.menuDetailCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+.menuDetailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuDetailTitle {
+  font-weight: 500;
+}
+
+.menuDetailExtra {
+  display: flex;
+  gap: 8px;
+}
+
+.menuDetailBody {
+  padding: 24px;
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+.menuDetailEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #999;
+}
+
+/* 菜单详情标签页样式 */
+.menuDetailTabs {
+  
+}
+
+.basicInfoTab {
+  padding: 16px 0;
+}
+
+.permissionTab {
+  padding: 16px 0;
+}
+
+.childrenTab {
+  padding: 16px 0;
+}
+
+/* 权限管理样式 */
+.permissionSection {
+  margin-bottom: 24px;
+}
+
+.permissionSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.permissionSectionTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.permissionList {
+  
+}
+
+.permissionItem {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #fafafa;
+}
+
+.permissionItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.permissionItemTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.permissionItemType {
+  
+}
+
+.permissionItemActions {
+  display: flex;
+  gap: 8px;
+}
+
+.permissionItemContent {
+  
+}
+
+.permissionItemDesc {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.permissionItemScope {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.permissionItemScopeLabel {
+  font-size: 12px;
+  color: #999;
+}
+
+/* 菜单表单模态框样式 */
+.menuFormModal {
+  
+}
+
+.menuForm {
+  padding: 16px 0;
+}
+
+.menuFormSubmitSection {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+/* 权限配置模态框样式 */
+.permissionModal {
+  
+}
+
+.permissionFormTabs {
+  
+}
+
+.permissionFormSection {
+  margin-bottom: 24px;
+}
+
+.permissionFormSectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.dataScopeFormSection {
+  
+}
+
+.dataScopeOptions {
+  
+}
+
+.dataScopeOption {
+  margin-bottom: 12px;
+}
+
+.dataScopeOptionTitle {
+  font-weight: 500;
+}
+
+.dataScopeOptionDesc {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.customDeptSelector {
+  margin-top: 12px;
+}

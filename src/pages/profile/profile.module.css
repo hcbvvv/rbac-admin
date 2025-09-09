@@ -1,0 +1,92 @@
+/* Profile 页面样式 */
+
+.profileContainer {
+  background-color: #f5f5f5;
+}
+
+.profileCard {
+  height: calc(100vh - 156px);
+  overflow: hidden;
+}
+
+.profileBody {
+  height: calc(100vh - 156px);
+  overflow: auto;
+}
+
+.profileTabs {
+}
+
+.tabContent {
+  padding: 16px 0;
+}
+
+/* 个人信息标签页样式 */
+.personalInfoSection {
+  
+}
+
+.avatarSection {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.avatarUploader {
+  
+}
+
+.avatarOverlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatarUploader:hover .avatarOverlay {
+  opacity: 1 !important;
+}
+
+.userInfoSection {
+  
+}
+
+.userForm {
+  padding: 16px 0;
+}
+
+.formSubmitSection {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+/* 密码修改标签页样式 */
+.passwordChangeSection {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.passwordForm {
+  padding: 16px 0;
+}
+
+.passwordAlert {
+  margin-bottom: 24px;
+}
+
+/* 个人设置标签页样式 */
+.personalSettingsSection {
+  
+}
+
+.settingsForm {
+  padding: 16px 0;
+}
+
+.settingCard {
+  margin-bottom: 24px;
+}

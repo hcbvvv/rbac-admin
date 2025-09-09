@@ -1,0 +1,115 @@
+/* DeptManage 页面样式 */
+
+.deptManageContainer {
+  background-color: #f5f5f5;
+}
+
+.deptManageRow {
+  height: calc(100vh - 144px);
+}
+
+/* 左侧部门树样式 */
+.leftPanel {
+  height: 100%;
+}
+
+.deptTreeCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+.deptTreeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deptTreeTitle {
+  font-weight: 500;
+}
+
+.deptTreeExtra {
+  display: flex;
+  gap: 8px;
+}
+
+.deptTreeBody {
+  padding: 12px;
+  height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.deptTreeNode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deptNodeIcon {
+  
+}
+
+.deptNodeName {
+  
+}
+
+.deptNodeStatus {
+  
+}
+
+/* 右侧部门详情样式 */
+.rightPanel {
+  height: 100%;
+}
+
+.deptDetailCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+.deptDetailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deptDetailTitle {
+  font-weight: 500;
+}
+
+.deptDetailExtra {
+  display: flex;
+  gap: 8px;
+}
+
+.deptDetailBody {
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+.deptDetailEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #999;
+}
+
+/* 部门表单模态框样式 */
+.deptFormModal {
+  
+}
+
+.deptForm {
+  padding: 16px 0;
+}
+
+.deptFormRow {
+  margin-bottom: 0;
+}
+
+.deptFormSubmitSection {
+  text-align: right;
+  margin-bottom: 0;
+}

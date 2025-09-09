@@ -1,0 +1,81 @@
+/* 通用容器样式规范 */
+
+/* 主容器样式 */
+.mainContainer {
+  background-color: #f5f5f5;
+}
+
+/* 卡片容器样式 */
+.cardContainer {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+/* 卡片内容区域样式 */
+.cardBody {
+  padding: 24px;
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+/* 左右分栏布局样式 */
+.splitRow {
+  height: calc(100vh - 144px);
+}
+
+/* 左侧面板样式 */
+.leftPanel {
+  height: 100%;
+}
+
+/* 右侧面板样式 */
+.rightPanel {
+  height: 100%;
+}
+
+/* 左侧卡片样式 */
+.leftCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+/* 左侧内容区域样式 */
+.leftCardBody {
+  padding: 12px;
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+/* 右侧卡片样式 */
+.rightCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+/* 右侧内容区域样式 */
+.rightCardBody {
+  padding: 24px;
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+/* 表格容器样式 */
+.tableContainer {
+  padding-bottom: 20px;
+}
+
+/* 表单容器样式 */
+.formContainer {
+  padding: 16px 0;
+}
+
+/* 模态框内容区域样式 */
+.modalBody {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* 标签页内容区域样式 */
+.tabContent {
+  padding: 16px 0;
+}

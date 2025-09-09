@@ -1,0 +1,86 @@
+/* Login 页面样式 */
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.loginCardBody {
+  padding: 24px;
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.loginTitle {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
+.loginSubtitle {
+  font-size: 16px;
+  margin: 8px 0 0 0;
+  opacity: 0.8;
+}
+
+.loginForm {
+  padding: 16px 0;
+}
+
+.formItem {
+  
+}
+
+.inputField {
+  
+}
+
+.submitButton {
+  
+}
+
+.demoSection {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.demoText {
+  margin: 8px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.demoButtons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.loginFooter {
+  margin-top: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.footerText {
+  
+}

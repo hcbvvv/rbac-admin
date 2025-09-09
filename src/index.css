@@ -35,8 +35,9 @@ body {
 }
 
 .site-layout-content {
-  background: #fff;
+  /* background: #fff; */
   height: 100%; /* 充满父容器 */
+  width: 100%;
 }
 
 /* 修复固定头部带来的样式问题 */

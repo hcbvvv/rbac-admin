@@ -1,0 +1,81 @@
+/* ServerError 页面样式 */
+
+.serverErrorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+.serverErrorCard {
+  max-width: 600px;
+  width: 100%;
+  height: calc(100vh - 40px);
+  overflow: hidden;
+}
+
+.serverErrorCardBody {
+  padding: 24px;
+  height: calc(100vh - 80px);
+  overflow: auto;
+}
+
+.serverErrorResult {
+  
+}
+
+.serverErrorExtra {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.serverErrorButton {
+  
+}
+
+.serverErrorAlert {
+  margin-top: 20px;
+}
+
+.serverErrorInfo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.serverErrorPath {
+  font-size: 14px;
+  color: #666;
+}
+
+.serverErrorId {
+  font-size: 12px;
+  color: #999;
+}
+
+.errorDetailsPanel {
+  margin-top: 20px;
+}
+
+.errorDetailsHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.errorDetailsContent {
+  background: #f6f8fa;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: Monaco, Menlo, "Ubuntu Mono", monospace;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid #d9d9d9;
+}

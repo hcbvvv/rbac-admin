@@ -1,0 +1,94 @@
+/* Dashboard 页面样式 */
+
+.dashboardContainer {
+  background-color: #f5f5f5;
+}
+
+.dashboardCard {
+  height: calc(100vh - 96px);
+  overflow: hidden;
+}
+
+.dashboardBody {
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+.welcomeCard {
+  margin-bottom: 24px;
+}
+
+.welcomeTitle {
+  
+}
+
+.welcomeDescription {
+  
+}
+
+.userInfo {
+  margin-top: 16px;
+}
+
+.userInfoItem {
+  margin-bottom: 4px;
+}
+
+.roleTag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.roleTagSuper {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.roleTagAdmin {
+  background: #fff1f0;
+  color: #ff4d4f;
+}
+
+.roleTagUser {
+  background: #f0f5ff;
+  color: #1890ff;
+}
+
+.statisticsRow {
+  margin-bottom: 24px;
+}
+
+.statisticCard {
+  
+}
+
+.statisticContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statisticIcon {
+  
+}
+
+.actionsRow {
+  
+}
+
+.actionCard {
+  
+}
+
+.actionButtons {
+  width: 100%;
+}
+
+.systemInfo {
+  
+}
+
+.systemInfoItem {
+  margin-bottom: 16px;
+}
