@@ -7,7 +7,7 @@
 .errorDemoCard {
   margin-bottom: 24px;
   height: calc(100vh - 96px);
-  overflow: hidden;
+  overflow: auto;
 }
 
 .errorDemoBody {
