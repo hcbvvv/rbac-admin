@@ -130,6 +130,15 @@ export const PERMISSION_CODES = {
   DEPT_EDIT: 'dept:edit',
   DEPT_DELETE: 'dept:delete',
   DEPT_ASSIGN: 'dept:assign',
+  
+  // 数据字典
+  DICT_VIEW: 'dict:view',
+  DICT_CREATE: 'dict:create',
+  DICT_EDIT: 'dict:edit',
+  DICT_DELETE: 'dict:delete',
+  DICT_OPTION_CREATE: 'dict:option:create',
+  DICT_OPTION_EDIT: 'dict:option:edit',
+  DICT_OPTION_DELETE: 'dict:option:delete',
 }
 
 // 预定义的系统角色

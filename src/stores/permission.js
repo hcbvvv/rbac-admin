@@ -36,6 +36,10 @@ export const usePermissionStore = create((set, get) => ({
         { id: '19', code: 'dept:create', name: '创建部门' },
         { id: '20', code: 'dept:edit', name: '编辑部门' },
         { id: '21', code: 'dept:delete', name: '删除部门' },
+        { id: '22', code: 'dict:view', name: '查看数据字典' },
+        { id: '23', code: 'dict:create', name: '创建数据字典' },
+        { id: '24', code: 'dict:edit', name: '编辑数据字典' },
+        { id: '25', code: 'dict:delete', name: '删除数据字典' },
       ]
       
       // 模拟网络延迟
@@ -61,6 +65,7 @@ export const usePermissionStore = create((set, get) => ({
         { id: '4', code: 'role', name: '角色管理' },
         { id: '5', code: 'menu', name: '菜单管理' },
         { id: '6', code: 'dept', name: '部门管理' },
+        { id: '7', code: 'dict', name: '数据字典' },
       ]
       
       // 模拟网络延迟
@@ -85,6 +90,7 @@ export const usePermissionStore = create((set, get) => ({
         { id: '4', code: 'role', name: '角色管理', type: 'menu', parentId: '2' },
         { id: '5', code: 'menu', name: '菜单管理', type: 'menu', parentId: '2' },
         { id: '6', code: 'dept', name: '部门管理', type: 'menu', parentId: '2' },
+        { id: '7', code: 'dict', name: '数据字典', type: 'menu', parentId: '2' },
       ]
       
       // 模拟网络延迟

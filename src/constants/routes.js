@@ -15,6 +15,7 @@ export const ROUTES = {
   ROLE_MANAGE: '/system/role',
   DEPT_MANAGE: '/system/dept',
   MENU_MANAGE: '/system/menu',
+  DICT_MANAGE: '/system/dict',
   ERROR_DEMO: '/system/error-demo',
   
   // 监控管理

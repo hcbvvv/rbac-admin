@@ -190,6 +190,34 @@ export const useAuthStore = create(
           })
         }
       },
+      
+      // 更新个人信息
+      updateProfile: async (profileData) => {
+        const currentUser = get().user
+        if (!currentUser) {
+          throw new Error('用户未登录')
+        }
+        
+        try {
+          // 模拟API调用
+          await new Promise(resolve => setTimeout(resolve, 500))
+          
+          // 更新用户信息
+          const updatedUser = {
+            ...currentUser,
+            ...profileData
+          }
+          
+          // 保存到localStorage
+          localStorage.setItem('user_info', JSON.stringify(updatedUser))
+          
+          set({ user: updatedUser })
+          return updatedUser
+        } catch (error) {
+          console.error('更新个人信息失败:', error)
+          throw error
+        }
+      },
     }),
     {
       name: 'auth-storage',

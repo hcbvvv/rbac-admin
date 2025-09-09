@@ -27,7 +27,8 @@ import {
   SearchOutlined,
   ReloadOutlined,
   UserOutlined,
-  TeamOutlined
+  TeamOutlined,
+  HomeOutlined
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
 import { useDeptStore } from '@/stores'
@@ -448,10 +449,23 @@ const UserManage = () => {
         <Col xs={24} sm={24} md={6} lg={6} xl={5}>
           <Card 
             title={
-              <Space>
-                <TeamOutlined />
-                <span>部门结构</span>
-              </Space>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                <Space>
+                  <TeamOutlined />
+                  <span>部门结构</span>
+                </Space>
+                <Button 
+                  type="text" 
+                  size="small"
+                  icon={<HomeOutlined />}
+                  onClick={() => {
+                    setSelectedDeptId(null)
+                    setSelectedDeptInfo(null)
+                  }}
+                  title="显示全部用户"
+                  style={{ color: '#1890ff' }}
+                />
+              </div>
             }
             size="small"
             style={{ height: 'calc(100vh - 96px)', overflow: 'hidden' }}
@@ -461,20 +475,6 @@ const UserManage = () => {
               overflow: 'auto'
             }}}
           >
-            <div style={{ marginBottom: 8 }}>
-              <Button 
-                type="link" 
-                size="small"
-                onClick={() => {
-                  setSelectedDeptId(null)
-                  setSelectedDeptInfo(null)
-                }}
-                style={{ padding: 0, height: 'auto' }}
-              >
-                显示全部
-              </Button>
-            </div>
-            
             <UserManageDeptTree
               deptData={depts}
               userStats={deptUserStats}
@@ -494,11 +494,17 @@ const UserManage = () => {
                 <span>
                   {selectedDeptInfo ? `${selectedDeptInfo.name} - 用户列表` : '用户列表'}
                 </span>
-                {selectedDeptInfo && (
+                <Space size="small">
                   <Tag color="blue">
-                    {filteredUsers.length} 人
+                    总计 {filteredUsers.length} 人
                   </Tag>
-                )}
+                  <Tag color="green">
+                    正常 {filteredUsers.filter(u => u.status === 'active').length} 人
+                  </Tag>
+                  <Tag color="red">
+                    禁用 {filteredUsers.filter(u => u.status === 'inactive').length} 人
+                  </Tag>
+                </Space>
               </Space>
             }
             extra={
@@ -539,33 +545,7 @@ const UserManage = () => {
               overflow: 'auto'
             }}}
           >
-            {/* 部门信息显示 */}
-            {selectedDeptInfo && (
-              <div style={{ marginBottom: 16, padding: 12, background: '#f5f5f5', borderRadius: 6 }}>
-                <Space split={<Divider type="vertical" />}>
-                  <Text>
-                    <Text type="secondary">部门：</Text>
-                    <Text strong>{selectedDeptInfo.name}</Text>
-                  </Text>
-                  <Text>
-                    <Text type="secondary">总人数：</Text>
-                    <Text strong>{filteredUsers.length}</Text>
-                  </Text>
-                  <Text>
-                    <Text type="secondary">正常：</Text>
-                    <Text strong style={{ color: '#52c41a' }}>
-                      {filteredUsers.filter(u => u.status === 'active').length}
-                    </Text>
-                  </Text>
-                  <Text>
-                    <Text type="secondary">禁用：</Text>
-                    <Text strong style={{ color: '#ff4d4f' }}>
-                      {filteredUsers.filter(u => u.status === 'inactive').length}
-                    </Text>
-                  </Text>
-                </Space>
-              </div>
-            )}
+
             
             <Table
               columns={columns}
@@ -573,6 +553,7 @@ const UserManage = () => {
               rowKey="id"
               loading={loading}
               size="small"
+              style={{paddingBottom:'20px'}}
               locale={{
                 emptyText: selectedDeptInfo ? 
                   `${selectedDeptInfo.name}暂无用户数据` : 

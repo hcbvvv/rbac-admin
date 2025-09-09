@@ -10,6 +10,7 @@ export { roleAPI } from './role'
 export { permissionAPI } from './permission'
 export { menuAPI } from './menu'
 export { deptAPI } from './dept'
+export { dictAPI } from './dict'
 export { systemAPI } from './system'
 
 // 导出请求工具
@@ -23,5 +24,6 @@ export const api = {
   permission: () => import('./permission').then(module => module.permissionAPI),
   menu: () => import('./menu').then(module => module.menuAPI),
   dept: () => import('./dept').then(module => module.deptAPI),
+  dict: () => import('./dict').then(module => module.dictAPI),
   system: () => import('./system').then(module => module.systemAPI),
 }

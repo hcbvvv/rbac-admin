@@ -1,8 +1,8 @@
 import React from 'react'
 import { Layout } from 'antd'
 import { Outlet } from 'react-router-dom'
-import { Sidebar, AppHeader } from '@/components'
-import { useAppStore } from '@/stores'
+import { Sidebar, AppHeader, InlineErrorPage } from '@/components'
+import { useAppStore, useErrorStore } from '@/stores'
 
 const { Content, Sider } = Layout
 
@@ -11,6 +11,7 @@ const { Content, Sider } = Layout
  */
 const MainLayout = () => {
   const { collapsed } = useAppStore()
+  const { showInlineError, errorType, errorInfo, onRetry } = useErrorStore()
   
   return (
     <Layout style={{ minHeight: '100vh' }}>
@@ -60,7 +61,15 @@ const MainLayout = () => {
               height: '100%',
             }}
           >
-            <Outlet />
+            {showInlineError ? (
+              <InlineErrorPage 
+                errorType={errorType}
+                errorInfo={errorInfo}
+                onRetry={onRetry}
+              />
+            ) : (
+              <Outlet />
+            )}
           </div>
         </Content>
       </Layout>

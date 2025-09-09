@@ -6,13 +6,16 @@ import AuthLayout from '@/layouts/AuthLayout'
 // 懒加载页面组件
 const Dashboard = lazy(() => import('@/pages/Dashboard'))
 const Login = lazy(() => import('@/pages/Login'))
+const Profile = lazy(() => import('@/pages/Profile'))
 
 // 系统管理页面
 const UserManage = lazy(() => import('@/pages/system/UserManage'))
 const RoleManage = lazy(() => import('@/pages/system/RoleManage'))
 const DeptManage = lazy(() => import('@/pages/system/DeptManage'))
 const MenuManage = lazy(() => import('@/pages/system/MenuManage'))
+const DictManage = lazy(() => import('@/pages/system/DictManage'))
 const ErrorDemo = lazy(() => import('@/pages/system/ErrorDemo'))
+const ErrorDemoTest = lazy(() => import('@/pages/system/ErrorDemoTest'))
 
 // 错误页面
 const NotFound = lazy(() => import('@/pages/errors/NotFound'))
@@ -53,6 +56,28 @@ export const routes = [
         meta: {
           title: '仪表板',
           icon: 'DashboardOutlined',
+          keepAlive: true,
+        },
+      },
+      
+      // 个人中心
+      {
+        path: ROUTES.PROFILE,
+        element: <Profile />,
+        meta: {
+          title: '个人中心',
+          icon: 'UserOutlined',
+          keepAlive: true,
+        },
+      },
+      
+      // 个人设置（指向同一个组件）
+      {
+        path: ROUTES.SETTINGS,
+        element: <Profile />,
+        meta: {
+          title: '个人设置',
+          icon: 'SettingOutlined',
           keepAlive: true,
         },
       },
@@ -107,10 +132,29 @@ export const routes = [
             },
           },
           {
+            path: ROUTES.DICT_MANAGE,
+            element: <DictManage />,
+            meta: {
+              title: '数据字典',
+              icon: 'BookOutlined',
+              permission: PERMISSION_CODES.DICT_VIEW,
+              keepAlive: true,
+            },
+          },
+          {
             path: '/system/error-demo',
             element: <ErrorDemo />,
             meta: {
               title: '错误页面样例',
+              icon: 'ExclamationCircleOutlined',
+              keepAlive: false,
+            },
+          },
+          {
+            path: '/system/error-demo-test',
+            element: <ErrorDemoTest />,
+            meta: {
+              title: '错误页面测试',
               icon: 'ExclamationCircleOutlined',
               keepAlive: false,
             },

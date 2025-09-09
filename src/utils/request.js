@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { message } from 'antd'
+import { captureError } from './errorHandler'
 
 // 创建 axios 实例
 const request = axios.create({
@@ -69,20 +70,51 @@ request.interceptors.response.use(
           break
         case 403:
           message.error('权限不足，无法访问')
+          // 权限错误，使用全局错误处理
+          const permissionError = new Error(data?.message || '权限不足')
+          permissionError.status = 403
+          permissionError.response = error.response
+          captureError(permissionError, {
+            url: error.config?.url,
+            method: error.config?.method,
+            params: error.config?.params,
+            data: error.config?.data,
+            errorType: '403'
+          })
           break
         case 404:
           message.error('请求的资源不存在')
           break
         case 500:
-          message.error('服务器内部错误')
+        case 502:
+        case 503:
+        case 504:
+          // 服务器错误，使用全局错误处理
+          const serverError = new Error(data?.message || '服务器内部错误')
+          serverError.status = status
+          serverError.response = error.response
+          captureError(serverError, {
+            url: error.config?.url,
+            method: error.config?.method,
+            params: error.config?.params,
+            data: error.config?.data
+          })
           break
         default:
           message.error(data?.message || '网络错误，请稍后重试')
       }
     } else if (error.request) {
+      // 网络错误
       message.error('网络连接失败，请检查网络')
+      console.error('Network Error:', error.request)
     } else {
+      // 请求配置错误或其他错误
       message.error('请求配置错误')
+      // 捕获未知错误
+      captureError(error, {
+        type: 'request_config_error',
+        config: error.config
+      })
     }
     
     return Promise.reject(error)

@@ -12,9 +12,14 @@ import {
   CustomerServiceOutlined,
   ReloadOutlined,
   HomeOutlined,
-  ArrowLeftOutlined
+  ArrowLeftOutlined,
+  ThunderboltOutlined,
+  CodeOutlined,
+  EyeOutlined
 } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
+import { captureError } from '@/utils/errorHandler'
+import { useErrorStore } from '@/stores/error'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -24,8 +29,7 @@ const { Title, Paragraph, Text } = Typography
 const ErrorDemo = () => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
-  const [layoutMode, setLayoutMode] = useState('card') // 'card' | 'sidebar'
-  const [selectedErrorType, setSelectedErrorType] = useState('404')
+  const { showError, hideError } = useErrorStore()
 
   // 模拟触发404错误
   const triggerNotFound = () => {
@@ -54,11 +58,67 @@ const ErrorDemo = () => {
       })
     } catch (error) {
       console.error('API错误:', error)
-      // 这里可以显示错误提示或跳转到错误页面
+      // 使用全局错误处理
+      captureError(error, { type: 'api_simulation', action: 'simulateApiError' })
     } finally {
       setLoading(false)
     }
   }
+
+  // 模拟JavaScript运行时错误
+  const triggerJavaScriptError = () => {
+    // 访问不存在的属性
+    const obj = null
+    console.log(obj.someProperty) // 这会抛出TypeError
+  }
+
+  // 模拟Promise拒绝错误
+  const triggerPromiseRejection = () => {
+    // 未处理的Promise拒绝
+    Promise.reject(new Error('未处理的Promise拒绝错误'))
+  }
+
+  // 模拟内联403错误
+  const triggerInline403 = () => {
+    const error = {
+      message: '权限不足，无法访问此页面',
+      status: 403,
+      type: 'permission_denied',
+      timestamp: new Date().toISOString(),
+      errorId: `ERR_403_${Date.now()}`
+    }
+    showError('403', error)
+  }
+
+  // 模拟内联500错误
+  const triggerInline500 = () => {
+    const error = {
+      message: '服务器内部错误，请稍后重试',
+      status: 500,
+      type: 'internal_server_error',
+      timestamp: new Date().toISOString(),
+      errorId: `ERR_500_${Date.now()}`,
+      stack: 'Error: 模拟的服务器错误\n    at triggerInline500\n    at onClick'
+    }
+    showError('500', error, () => {
+      console.log('重试操作')
+      hideError()
+    })
+  }
+
+  // 模拟内联404错误
+  const triggerInline404 = () => {
+    const error = {
+      message: '请求的资源不存在',
+      status: 404,
+      type: 'not_found',
+      timestamp: new Date().toISOString(),
+      errorId: `ERR_404_${Date.now()}`
+    }
+    showError('404', error)
+  }
+
+
 
   // 错误类型配置
   const errorTypes = [
@@ -171,197 +231,62 @@ const ErrorDemo = () => {
         '联系技术支持'
       ],
       action: () => simulateApiError()
+    },
+    {
+      key: 'javascript',
+      title: 'JavaScript错误',
+      icon: <CodeOutlined />,
+      color: '#f5222d',
+      status: '500',
+      subtitle: '代码执行异常，系统错误',
+      description: '当JavaScript代码执行出现异常时显示的错误页面。',
+      causes: [
+        '空指针引用',
+        '类型错误',
+        '函数不存在',
+        '语法错误'
+      ],
+      solutions: [
+        '刷新页面重试',
+        '清空浏览器缓存',
+        '联系技术支持',
+        '更新浏览器版本'
+      ],
+      action: triggerJavaScriptError
+    },
+    {
+      key: 'promise',
+      title: 'Promise拒绝错误',
+      icon: <ThunderboltOutlined />,
+      color: '#eb2f96',
+      status: '500',
+      subtitle: '未处理的Promise异常',
+      description: '当Promise被拒绝且未被捕获时显示的错误页面。',
+      causes: [
+        '异步操作失败',
+        '网络请求被拒绝',
+        '数据处理异常',
+        '服务不可用'
+      ],
+      solutions: [
+        '检查错误原因',
+        '重新尝试操作',
+        '联系技术支持',
+        '检查服务状态'
+      ],
+      action: triggerPromiseRejection
     }
   ]
 
-  // 获取当前选中的错误类型配置
-  const currentErrorType = errorTypes.find(type => type.key === selectedErrorType) || errorTypes[0]
 
-  // 切换布局模式
-  const handleLayoutChange = (checked) => {
-    setLayoutMode(checked ? 'sidebar' : 'card')
-  }
 
-  // 错误类型菜单项
-  const menuItems = errorTypes.map(errorType => ({
-    key: errorType.key,
-    icon: React.cloneElement(errorType.icon, { style: { color: errorType.color } }),
-    label: (
-      <Space>
-        <span>{errorType.title}</span>
-        <Badge 
-          count={errorType.key} 
-          style={{ 
-            backgroundColor: errorType.color,
-            fontSize: '10px',
-            height: '16px',
-            lineHeight: '16px',
-            minWidth: '16px'
-          }} 
-        />
-      </Space>
-    ),
-  }))
 
-  // 渲染错误详情内容
-  const renderErrorDetail = () => {
-    return (
-      <Card 
-        title={
-          <Space>
-            {React.cloneElement(currentErrorType.icon, { style: { color: currentErrorType.color } })}
-            <span>{currentErrorType.title}</span>
-          </Space>
-        }
-        extra={
-          <Button 
-            type="primary" 
-            danger
-            onClick={currentErrorType.action}
-            loading={currentErrorType.key === 'timeout' && loading}
-          >
-            {currentErrorType.key === 'timeout' && loading ? '处理中...' : '触发演示'}
-          </Button>
-        }
-      >
-        <div style={{ marginBottom: 24 }}>
-          <Result
-            status={currentErrorType.status}
-            title={currentErrorType.status.toUpperCase()}
-            subTitle={currentErrorType.subtitle}
-            extra={
-              <Space wrap>
-                <Button 
-                  type="primary" 
-                  icon={<HomeOutlined />}
-                  onClick={() => navigate('/dashboard')}
-                >
-                  返回首页
-                </Button>
-                <Button 
-                  icon={<ArrowLeftOutlined />}
-                  onClick={() => window.history.back()}
-                >
-                  返回上页
-                </Button>
-                <Button 
-                  icon={<ReloadOutlined />}
-                  onClick={() => window.location.reload()}
-                >
-                  刷新页面
-                </Button>
-                <Button 
-                  icon={<CustomerServiceOutlined />}
-                  onClick={() => console.log('联系客服')}
-                >
-                  联系客服
-                </Button>
-              </Space>
-            }
-          />
-        </div>
 
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Alert
-              message="错误描述"
-              description={currentErrorType.description}
-              type="info"
-              showIcon
-              style={{ marginBottom: 16 }}
-            />
-            
-            <Alert
-              message="可能原因"
-              description={
-                <ul style={{ margin: 0, paddingLeft: 20 }}>
-                  {currentErrorType.causes.map((cause, index) => (
-                    <li key={index}>{cause}</li>
-                  ))}
-                </ul>
-              }
-              type="warning"
-              showIcon
-            />
-          </Col>
-          
-          <Col xs={24} md={12}>
-            <Alert
-              message="解决方案"
-              description={
-                <ul style={{ margin: 0, paddingLeft: 20 }}>
-                  {currentErrorType.solutions.map((solution, index) => (
-                    <li key={index}>{solution}</li>
-                  ))}
-                </ul>
-              }
-              type="success"
-              showIcon
-            />
-          </Col>
-        </Row>
 
-        <Divider />
-        
-        <Alert
-          message="技术信息"
-          description={
-            <div>
-              <Typography.Text code>错误类型: {currentErrorType.key.toUpperCase()}</Typography.Text>
-              <br />
-              <Typography.Text code>时间戳: {new Date().toLocaleString()}</Typography.Text>
-              <br />
-              <Typography.Text code>用户代理: {navigator.userAgent.substring(0, 50)}...</Typography.Text>
-            </div>
-          }
-          type="info"
-          showIcon
-          style={{ marginTop: 16 }}
-        />
-      </Card>
-    )
-  }
 
-  // 渲染侧边栏布局
-  const renderSidebarLayout = () => {
-    return (
-      <Row gutter={16}>
-        {/* 左侧错误类型菜单 */}
-        <Col xs={24} sm={24} md={6} lg={6} xl={5}>
-          <Card 
-            title={
-              <Space>
-                <MenuOutlined />
-                <span>错误类型</span>
-              </Space>
-            }
-            size="small"
-            style={{ height: 'calc(100vh - 200px)', overflow: 'hidden' }}
-            bodyStyle={{ 
-              padding: '12px 0',
-              height: 'calc(100vh - 260px)',
-              overflow: 'auto'
-            }}
-          >
-            <Menu
-              mode="inline"
-              selectedKeys={[selectedErrorType]}
-              items={menuItems}
-              onClick={({ key }) => setSelectedErrorType(key)}
-              style={{ border: 'none' }}
-            />
-          </Card>
-        </Col>
-        
-        {/* 右侧错误详情 */}
-        <Col xs={24} sm={24} md={18} lg={18} xl={19}>
-          <div style={{ height: 'calc(100vh - 200px)', overflow: 'auto' }}>
-            {renderErrorDetail()}
-          </div>
-        </Col>
-      </Row>
-    )
-  }
+
+
+
 
   // 渲染卡片布局（原有模式）
   const renderCardLayout = () => {
@@ -447,7 +372,7 @@ const ErrorDemo = () => {
               </Card>
             </Col>
 
-            {/* 403 错误演示 */}
+            {/* 403 权限不足演示 */}
             <Col xs={24} sm={12} lg={8}>
               <Card
                 size="small"
@@ -481,6 +406,76 @@ const ErrorDemo = () => {
                 </Button>
               </Card>
             </Col>
+
+            {/* JavaScript错误演示 */}
+            <Col xs={24} sm={12} lg={8}>
+              <Card
+                size="small"
+                title={
+                  <Space>
+                    <CodeOutlined style={{ color: '#f5222d' }} />
+                    <span>JavaScript错误</span>
+                  </Space>
+                }
+                hoverable
+              >
+                <Typography.Paragraph>
+                  当JavaScript代码执行出现异常时显示的错误页面。
+                </Typography.Paragraph>
+                <Typography.Paragraph>
+                  <Typography.Text strong>触发条件：</Typography.Text>
+                  <br />
+                  • 空指针引用
+                  <br />
+                  • 类型错误
+                  <br />
+                  • 函数不存在
+                </Typography.Paragraph>
+                <Button 
+                  type="primary" 
+                  danger 
+                  onClick={triggerJavaScriptError}
+                  block
+                >
+                  触发 JS 错误
+                </Button>
+              </Card>
+            </Col>
+
+            {/* Promise拒绝错误演示 */}
+            <Col xs={24} sm={12} lg={8}>
+              <Card
+                size="small"
+                title={
+                  <Space>
+                    <ThunderboltOutlined style={{ color: '#eb2f96' }} />
+                    <span>Promise拒绝错误</span>
+                  </Space>
+                }
+                hoverable
+              >
+                <Typography.Paragraph>
+                  当Promise被拒绝且未被捕获时显示的错误页面。
+                </Typography.Paragraph>
+                <Typography.Paragraph>
+                  <Typography.Text strong>触发条件：</Typography.Text>
+                  <br />
+                  • 异步操作失败
+                  <br />
+                  • 网络请求被拒绝
+                  <br />
+                  • 数据处理异常
+                </Typography.Paragraph>
+                <Button 
+                  type="primary" 
+                  danger 
+                  onClick={triggerPromiseRejection}
+                  block
+                >
+                  触发 Promise 错误
+                </Button>
+              </Card>
+            </Col>
           </Row>
 
           <Divider />
@@ -488,7 +483,7 @@ const ErrorDemo = () => {
           <Typography.Title level={3}>其他错误处理演示</Typography.Title>
           
           <Row gutter={[16, 16]}>
-            <Col xs={24} md={12}>
+            <Col xs={24} md={8}>
               <Card size="small" title="API 错误模拟">
                 <Typography.Paragraph>
                   模拟API请求错误，查看控制台输出错误信息。
@@ -503,8 +498,54 @@ const ErrorDemo = () => {
                 </Button>
               </Card>
             </Col>
+
+            {/* 内联错误演示 */}
+            <Col xs={24} md={8}>
+              <Card
+                size="small"
+                title={
+                  <Space>
+                    <EyeOutlined style={{ color: '#1890ff' }} />
+                    <span>内联错误显示</span>
+                  </Space>
+                }
+              >
+                <Typography.Paragraph>
+                  在主布局内直接显示错误，不跳转新页面。
+                </Typography.Paragraph>
+                <Space direction="vertical" style={{ width: '100%' }}>
+                  <Button 
+                    type="primary" 
+                    danger 
+                    onClick={triggerInline500}
+                    block
+                    size="small"
+                  >
+                    内联 500 错误
+                  </Button>
+                  <Button 
+                    type="primary" 
+                    danger 
+                    onClick={triggerInline403}
+                    block
+                    size="small"
+                  >
+                    内联 403 错误
+                  </Button>
+                  <Button 
+                    type="primary" 
+                    danger 
+                    onClick={triggerInline404}
+                    block
+                    size="small"
+                  >
+                    内联 404 错误
+                  </Button>
+                </Space>
+              </Card>
+            </Col>
             
-            <Col xs={24} md={12}>
+            <Col xs={24} md={8}>
               <Card size="small" title="返回操作">
                 <Typography.Paragraph>
                   返回到系统的其他页面继续操作。
@@ -518,6 +559,9 @@ const ErrorDemo = () => {
                   </Button>
                   <Button onClick={() => navigate('/system/role')}>
                     角色管理
+                  </Button>
+                  <Button onClick={() => hideError()}>
+                    隐藏错误
                   </Button>
                 </Space>
               </Card>
@@ -550,45 +594,7 @@ const ErrorDemo = () => {
     )
   }
 
-  return (
-    <div>
-      {/* 布局切换控制 */}
-      <Card size="small" style={{ marginBottom: 16 }}>
-        <Row justify="space-between" align="middle">
-          <Col>
-            <Space>
-              <Typography.Title level={4} style={{ margin: 0 }}>
-                <ExclamationCircleOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-                错误页面演示
-              </Typography.Title>
-              <Alert
-                message={layoutMode === 'card' ? '卡片列表模式' : '左右分栏模式'}
-                type="info"
-                size="small"
-                showIcon
-              />
-            </Space>
-          </Col>
-          <Col>
-            <Space>
-              <Typography.Text>布局模式：</Typography.Text>
-              <Tooltip title={layoutMode === 'card' ? '切换到侧边栏模式' : '切换到卡片模式'}>
-                <Switch
-                  checked={layoutMode === 'sidebar'}
-                  onChange={handleLayoutChange}
-                  checkedChildren={<MenuOutlined />}
-                  unCheckedChildren={<AppstoreOutlined />}
-                />
-              </Tooltip>
-            </Space>
-          </Col>
-        </Row>
-      </Card>
-      
-      {/* 根据布局模式渲染不同内容 */}
-      {layoutMode === 'sidebar' ? renderSidebarLayout() : renderCardLayout()}
-    </div>
-  )
+  return renderCardLayout()
 }
 
 export default ErrorDemo
