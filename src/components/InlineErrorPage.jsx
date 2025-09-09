@@ -129,8 +129,7 @@ const InlineErrorPage = ({
   }
 
   return (
-    <div style={{ 
-      padding: '40px 20px',
+    <div style={{
       minHeight: '400px',
       display: 'flex',
       flexDirection: 'column',
