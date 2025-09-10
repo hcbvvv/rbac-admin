@@ -5,7 +5,7 @@ import {
   ControlOutlined,
   ApiOutlined
 } from '@ant-design/icons'
-import styles from '../roleManage.module.css'
+import styles from '../roleManage.module.less'
 
 /**
  * 权限配置模态框组件

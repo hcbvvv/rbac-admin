@@ -15,7 +15,7 @@ import { captureError } from '@/utils/errorHandler'
 import { useErrorStore } from '@/stores/error'
 import ErrorTypeCard from './components/ErrorTypeCard'
 import InlineErrorDemo from './components/InlineErrorDemo'
-import styles from './errorDemo.module.css'
+import styles from './errorDemo.module.less'
 
 const { Title, Paragraph, Text } = Typography
 

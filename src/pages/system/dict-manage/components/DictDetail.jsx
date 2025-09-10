@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Space, Button, Popconfirm, Tag, Badge, Row, Col, Typography, Alert } from 'antd'
 import { FileTextOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons'
-import styles from '../dictManage.module.css'
+import styles from '../dictManage.module.less'
 
 const { Text } = Typography
 

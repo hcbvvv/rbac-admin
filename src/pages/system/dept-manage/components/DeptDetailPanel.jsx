@@ -7,7 +7,7 @@ import {
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
 import { DEPT_TYPE_OPTIONS, DEPT_STATUS_OPTIONS } from '@/constants'
-import styles from '../deptManage.module.css'
+import styles from '../deptManage.module.less'
 
 /**
  * 部门详情面板组件

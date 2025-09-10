@@ -4,7 +4,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useAuthStore } from '@/stores'
 import DemoLogin from './DemoLogin'
-import styles from '../login.module.css'
+import styles from '../login.module.less'
 
 /**
  * 登录表单组件

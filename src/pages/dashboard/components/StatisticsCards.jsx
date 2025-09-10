@@ -8,7 +8,7 @@ import {
   ArrowUpOutlined,
   ArrowDownOutlined,
 } from '@ant-design/icons'
-import styles from '../dashboard.module.css'
+import styles from '../dashboard.module.less'
 
 /**
  * 统计卡片组件

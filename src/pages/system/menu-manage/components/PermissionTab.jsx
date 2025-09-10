@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
 import PermissionFormModal from './PermissionFormModal'
-import styles from '../menuManage.module.css'
+import styles from '../menuManage.module.less'
 
 /**
  * 权限配置标签页组件

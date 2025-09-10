@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Form, Input, Button, Avatar, Upload, Row, Col, Typography } from 'antd'
 import { UserOutlined, CameraOutlined, SaveOutlined, PhoneOutlined, MailOutlined, IdcardOutlined } from '@ant-design/icons'
 import { DeptSelector } from '@/components'
-import styles from '../profile.module.css'
+import styles from '../profile.module.less'
 
 const { Title } = Typography
 

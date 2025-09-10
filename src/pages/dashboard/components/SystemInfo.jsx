@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Space } from 'antd'
-import styles from '../dashboard.module.css'
+import styles from '../dashboard.module.less'
 
 /**
  * 系统信息组件

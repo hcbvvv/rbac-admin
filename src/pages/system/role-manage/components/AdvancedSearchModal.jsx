@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Modal, Form, Input, Select, Row, Col, Alert, Button } from 'antd'
-import styles from '../roleManage.module.css'
+import styles from '../roleManage.module.less'
 
 const { Option } = Select
 

@@ -19,7 +19,7 @@ import {
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
 import { Input } from 'antd'
-import styles from '../userManage.module.css'
+import styles from '../userManage.module.less'
 
 const { Search } = Input
 const { Text } = Typography

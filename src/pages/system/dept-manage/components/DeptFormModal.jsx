@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Modal, Form, Input, Select, Button, Space, Row, Col } from 'antd'
 import { DEPT_TYPE_OPTIONS, DEPT_STATUS_OPTIONS } from '@/constants'
-import styles from '../deptManage.module.css'
+import styles from '../deptManage.module.less'
 
 const { Option } = Select
 const { TextArea } = Input

@@ -7,7 +7,7 @@ import {
   UserOutlined
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
-import styles from '../roleManage.module.css'
+import styles from '../roleManage.module.less'
 
 /**
  * 角色列表表格组件

@@ -5,7 +5,7 @@ import { useDeptManage } from './hooks/useDeptManage'
 import DeptTreePanel from './components/DeptTreePanel'
 import DeptDetailPanel from './components/DeptDetailPanel'
 import DeptFormModal from './components/DeptFormModal'
-import styles from './deptManage.module.css'
+import styles from './deptManage.module.less'
 
 /**
  * 部门管理页面

@@ -208,3 +208,4 @@ storybook-static/
 # Stylelint cache
 .stylelintcache
 .git
+.history

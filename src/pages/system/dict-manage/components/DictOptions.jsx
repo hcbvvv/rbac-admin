@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Space, Input, Button, Badge, Tag, Table, Alert } from 'antd'
 import { OrderedListOutlined, PlusOutlined } from '@ant-design/icons'
-import styles from '../dictManage.module.css'
+import styles from '../dictManage.module.less'
 
 const { Search } = Input
 

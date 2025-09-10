@@ -1,7 +1,7 @@
 import React from 'react'
 import { Result, Button } from 'antd'
 import { useNavigate } from 'react-router-dom'
-import styles from './forbidden.module.css'
+import styles from './forbidden.module.less'
 
 /**
  * 403 权限不足页面

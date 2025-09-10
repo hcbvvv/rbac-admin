@@ -1,7 +1,7 @@
 import React from 'react'
 import { List, Tag, Badge, Empty, Space } from 'antd'
 import MenuIcon from '@/components/MenuIcon'
-import styles from '../menuManage.module.css'
+import styles from '../menuManage.module.less'
 
 /**
  * 子菜单标签页组件

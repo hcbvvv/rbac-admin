@@ -2,7 +2,7 @@ import React from 'react'
 import { Result, Button, Space, Typography, Card } from 'antd'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { HomeOutlined, ArrowLeftOutlined, ReloadOutlined } from '@ant-design/icons'
-import styles from './notFound.module.css'
+import styles from './notFound.module.less'
 
 const { Text } = Typography
 

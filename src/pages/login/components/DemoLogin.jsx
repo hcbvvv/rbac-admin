@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'antd'
-import styles from '../login.module.css'
+import styles from '../login.module.less'
 
 /**
  * 演示登录组件

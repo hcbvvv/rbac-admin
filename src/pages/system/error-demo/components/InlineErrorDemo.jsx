@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Space, Alert } from 'antd'
 import { ExclamationCircleOutlined, CloseCircleOutlined, BugOutlined } from '@ant-design/icons'
-import styles from '../errorDemo.module.css'
+import styles from '../errorDemo.module.less'
 
 /**
  * 内联错误演示组件

@@ -5,7 +5,7 @@ import { useMenuManage } from './hooks/useMenuManage'
 import MenuTreePanel from './components/MenuTreePanel'
 import MenuDetailPanel from './components/MenuDetailPanel'
 import MenuFormModal from './components/MenuFormModal'
-import styles from './menuManage.module.css'
+import styles from './menuManage.module.less'
 
 /**
  * 菜单管理页面

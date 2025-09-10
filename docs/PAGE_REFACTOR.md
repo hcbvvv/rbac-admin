@@ -8,7 +8,7 @@ src/pages/
 ├── dashboard/                        # 仪表板模块
 │   ├── index.js                     # 模块入口
 │   ├── Dashboard.jsx                # 主组件
-│   ├── dashboard.module.css         # 样式文件
+│   ├── dashboard.module.less         # 样式文件
 │   └── components/                  # 子组件
 │       ├── WelcomeCard.jsx         # 欢迎卡片
 │       ├── StatisticsCards.jsx     # 统计卡片
@@ -17,7 +17,7 @@ src/pages/
 ├── login/                           # 登录模块
 │   ├── index.js                    # 模块入口
 │   ├── Login.jsx                   # 主组件
-│   ├── login.module.css            # 样式文件
+│   ├── login.module.less            # 样式文件
 │   └── components/                 # 子组件
 │       ├── LoginHeader.jsx         # 登录头部
 │       ├── LoginForm.jsx           # 登录表单
@@ -27,7 +27,7 @@ src/pages/
 │   ├── dict-manage/                # 数据字典管理模块
 │   │   ├── index.js               # 模块入口
 │   │   ├── DictManage.jsx         # 主组件
-│   │   ├── dictManage.module.css  # 样式文件
+│   │   ├── dictManage.module.less  # 样式文件
 │   │   ├── components/            # 子组件
 │   │   │   ├── DictList.jsx       # 字典列表（左侧）
 │   │   │   ├── DictDetail.jsx     # 字典详情（右上）
@@ -129,7 +129,7 @@ const DictManage = lazy(() => import('@/pages/system/dict-manage'))
 
 ### 3. 样式使用
 ```javascript
-import styles from './componentName.module.css'
+import styles from './componentName.module.less'
 
 // 使用样式
 <div className={styles.container}>...</div>

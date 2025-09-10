@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Button, List, Space } from 'antd'
-import styles from '../errorDemo.module.css'
+import styles from '../errorDemo.module.less'
 
 /**
  * 错误类型卡片组件

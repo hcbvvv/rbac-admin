@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Modal, Form, Input, Select, Radio, Button, Space } from 'antd'
 import { DATA_SCOPE_OPTIONS } from '@/constants/rbac'
 import DeptSelector from '@/components/DeptSelector'
-import styles from '../menuManage.module.css'
+import styles from '../menuManage.module.less'
 
 const { Option } = Select
 const { TextArea } = Input

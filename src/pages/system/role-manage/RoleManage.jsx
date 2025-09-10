@@ -8,7 +8,7 @@ import RoleFormModal from './components/RoleFormModal'
 import PermissionConfigModal from './components/PermissionConfigModal'
 import UserAssignModal from './components/UserAssignModal'
 import AdvancedSearchModal from './components/AdvancedSearchModal'
-import styles from './roleManage.module.css'
+import styles from './roleManage.module.less'
 
 /**
  * 角色管理页面

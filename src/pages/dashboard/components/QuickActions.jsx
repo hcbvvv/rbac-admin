@@ -7,7 +7,7 @@ import {
   MenuOutlined,
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
-import styles from '../dashboard.module.css'
+import styles from '../dashboard.module.less'
 
 /**
  * 快捷操作组件

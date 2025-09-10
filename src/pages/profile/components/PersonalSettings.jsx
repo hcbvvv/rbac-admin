@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Form, Button, Switch, Select, Typography, Divider } from 'antd'
 import { SettingOutlined, SaveOutlined } from '@ant-design/icons'
-import styles from '../profile.module.css'
+import styles from '../profile.module.less'
 
 const { Title } = Typography
 const { Option } = Select

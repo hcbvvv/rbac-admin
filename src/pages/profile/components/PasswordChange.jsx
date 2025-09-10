@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Form, Input, Button, Alert } from 'antd'
 import { LockOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
-import styles from '../profile.module.css'
+import styles from '../profile.module.less'
 
 /**
  * 密码修改组件

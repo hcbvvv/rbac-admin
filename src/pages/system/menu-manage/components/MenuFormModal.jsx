@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Modal, Form, Input, Select, Switch, InputNumber, Button, Space, Row, Col } from 'antd'
 import MenuIcon from '@/components/MenuIcon'
-import styles from '../menuManage.module.css'
+import styles from '../menuManage.module.less'
 
 const { Option } = Select
 const { TextArea } = Input

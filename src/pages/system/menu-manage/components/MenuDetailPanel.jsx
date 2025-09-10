@@ -10,7 +10,7 @@ import { usePermission } from '@/hooks/usePermission'
 import BasicInfoTab from './BasicInfoTab'
 import PermissionTab from './PermissionTab'
 import ChildrenTab from './ChildrenTab'
-import styles from '../menuManage.module.css'
+import styles from '../menuManage.module.less'
 
 /**
  * 菜单详情面板组件

@@ -9,7 +9,7 @@ import {
   ExclamationCircleOutlined,
   BugOutlined
 } from '@ant-design/icons'
-import styles from './serverError.module.css'
+import styles from './serverError.module.less'
 
 const { Text, Paragraph } = Typography
 const { Panel } = Collapse

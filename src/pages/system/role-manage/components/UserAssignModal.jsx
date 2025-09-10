@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal, Alert, Transfer, Row, Col, Space } from 'antd'
-import styles from '../roleManage.module.css'
+import styles from '../roleManage.module.less'
 
 /**
  * 人员分配模态框组件

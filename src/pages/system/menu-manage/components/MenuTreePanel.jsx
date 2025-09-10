@@ -11,7 +11,7 @@ import {
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
 import MenuIcon from '@/components/MenuIcon'
-import styles from '../menuManage.module.css'
+import styles from '../menuManage.module.less'
 
 /**
  * 菜单树面板组件

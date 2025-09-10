@@ -7,7 +7,7 @@ import {
   SearchOutlined
 } from '@ant-design/icons'
 import { usePermission } from '@/hooks/usePermission'
-import styles from '../roleManage.module.css'
+import styles from '../roleManage.module.less'
 
 const { Search } = Input
 const { Option } = Select

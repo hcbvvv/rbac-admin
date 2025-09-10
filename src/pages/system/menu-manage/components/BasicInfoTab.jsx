@@ -1,7 +1,7 @@
 import React from 'react'
 import { Descriptions, Tag } from 'antd'
 import MenuIcon from '@/components/MenuIcon'
-import styles from '../menuManage.module.css'
+import styles from '../menuManage.module.less'
 
 /**
  * 基本信息标签页组件

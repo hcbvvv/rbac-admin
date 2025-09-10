@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Typography, Space } from 'antd'
 import { useAuthStore } from '@/stores'
 import { usePermission } from '@/hooks/usePermission'
-import styles from '../dashboard.module.css'
+import styles from '../dashboard.module.less'
 
 const { Title, Paragraph } = Typography
 

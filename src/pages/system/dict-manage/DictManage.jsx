@@ -6,7 +6,7 @@ import DictOptions from './components/DictOptions'
 import DictModal from './components/DictModal'
 import OptionModal from './components/OptionModal'
 import { useDictManage } from './hooks/useDictManage'
-import styles from './dictManage.module.css'
+import styles from './dictManage.module.less'
 
 /**
  * 数据字典管理页面主组件

@@ -5,7 +5,7 @@ import PersonalInfo from './components/PersonalInfo'
 import PasswordChange from './components/PasswordChange'
 import PersonalSettings from './components/PersonalSettings'
 import { useProfileManage } from './hooks/useProfileManage'
-import styles from './profile.module.css'
+import styles from './profile.module.less'
 
 /**
  * 个人资料页面主组件

@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Button, Space } from 'antd'
 import { TeamOutlined, HomeOutlined } from '@ant-design/icons'
 import UserManageDeptTree from '@/components/UserManageDeptTree'
-import styles from '../userManage.module.css'
+import styles from '../userManage.module.less'
 
 /**
  * 部门树面板组件

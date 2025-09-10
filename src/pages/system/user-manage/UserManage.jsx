@@ -5,7 +5,7 @@ import { useUserManage } from './hooks/useUserManage'
 import DeptTreePanel from './components/DeptTreePanel'
 import UserListPanel from './components/UserListPanel'
 import UserFormModal from './components/UserFormModal'
-import styles from './userManage.module.css'
+import styles from './userManage.module.less'
 
 /**
  * 用户管理页面

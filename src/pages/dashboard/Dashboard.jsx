@@ -4,7 +4,7 @@ import WelcomeCard from './components/WelcomeCard'
 import StatisticsCards from './components/StatisticsCards'
 import QuickActions from './components/QuickActions'
 import SystemInfo from './components/SystemInfo'
-import styles from './dashboard.module.css'
+import styles from './dashboard.module.less'
 
 /**
  * 仪表板页面主组件

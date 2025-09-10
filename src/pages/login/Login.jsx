@@ -2,7 +2,7 @@ import React from 'react'
 import LoginHeader from './components/LoginHeader'
 import LoginForm from './components/LoginForm'
 import LoginFooter from './components/LoginFooter'
-import styles from './login.module.css'
+import styles from './login.module.less'
 
 /**
  * 登录页面主组件
