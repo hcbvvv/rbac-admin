@@ -48,11 +48,11 @@ class GlobalErrorHandler {
     this.reportError(error)
     
     // 根据错误类型决定是否显示错误页面
-    if (this.shouldShowErrorPage(event.reason)) {
-      this.showError(error)
-    } else {
+    // if (this.shouldShowErrorPage(event.reason)) {
+    //   this.showError(error)
+    // } else {
       message.error('操作失败，请重试')
-    }
+    //}
     
     // 阻止默认的错误处理
     event.preventDefault()
