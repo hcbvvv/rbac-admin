@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { message } from 'antd'
+import { message } from '@/utils/antdGlobal'
 
 /**
  * 菜单管理业务逻辑Hook

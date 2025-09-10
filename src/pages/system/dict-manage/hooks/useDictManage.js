@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Form, message } from 'antd'
+import { Form } from 'antd'
 import { usePermission } from '@/hooks/usePermission'
-
+import { message } from '@/utils/antdGlobal'
 /**
  * 字典管理页面的业务逻辑Hook
  */

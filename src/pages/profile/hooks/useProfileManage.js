@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Form, message } from 'antd'
+import { Form } from 'antd'
 import { useAuthStore } from '@/stores'
-
+import { message } from '@/utils/antdGlobal'
 /**
  * Profile页面业务逻辑Hook
  */

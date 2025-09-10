@@ -7,15 +7,14 @@ import {
   Typography,
   Space,
   Alert,
-  Button,
-  message
+  Button
 } from 'antd'
 import { SafetyOutlined } from '@ant-design/icons'
 import { useDeptStore } from '@/stores'
 import { roleAPI } from '@/api'
 import DeptSelector from '@/components/DeptSelector'
 import { DATA_SCOPE, DATA_SCOPE_OPTIONS } from '@/constants'
-
+import { message } from '@/utils/antdGlobal'
 const { Title, Text, Paragraph } = Typography
 
 /**

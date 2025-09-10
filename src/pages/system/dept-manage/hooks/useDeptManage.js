@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { message } from 'antd'
+import { message } from '@/utils/antdGlobal'
 import { useDeptStore } from '@/stores'
 
 /**

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { message } from 'antd'
+import { message } from '@/utils/antdGlobal'
 import { captureError } from './errorHandler'
 
 // 创建 axios 实例

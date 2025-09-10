@@ -1,4 +1,4 @@
-import { message } from 'antd'
+import { message } from '@/utils/antdGlobal'
 
 /**
  * 全局错误处理工具
@@ -51,7 +51,7 @@ class GlobalErrorHandler {
     // if (this.shouldShowErrorPage(event.reason)) {
     //   this.showError(error)
     // } else {
-      message.error('操作失败，请重试')
+    //  message.error('操作失败，请重试')
     //}
     
     // 阻止默认的错误处理

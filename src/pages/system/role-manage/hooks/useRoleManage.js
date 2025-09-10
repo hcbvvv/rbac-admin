@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { message } from 'antd'
+import { message } from '@/utils/antdGlobal'
 
 /**
  * 角色管理业务逻辑Hook
